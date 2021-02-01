@@ -1,0 +1,123 @@
+.Home {
+	background-color: #282c34;
+	width: 100vw;
+	height: 100vh;
+	text-align: center;
+}
+.title {
+	color: white;
+	padding: .67em;
+	font-size: 2em;
+	font-weight: bold;
+}
+.title img {
+	height: 40px;
+	color: white;
+	vertical-align: middle;
+	margin-left: 10px;
+	fill: white;
+}
+h1 {
+	color: white;
+}
+.flex {
+	display: flex;
+}
+
+.tab-nav {
+	color: #282c34;
+	position: fixed;
+	width: 60vw;
+	left: 20%;
+	justify-content: space-between;
+	margin-bottom: 5px;
+}
+
+.tab {
+	padding: 10px;
+	border-radius: 20px;
+	font-size: 1.5em;
+	background-color: #40D075;
+	margin-right: 5px;
+	font-weight: bold;
+	cursor: default;
+
+}
+.search {
+	margin-right: 5px;
+	border-radius: 20px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.search-button {
+	color: #282c34;
+	border-radius: 20px;
+	background-color: #40D075;
+	padding-left: 20px;
+	padding-right: 20px;
+	font-size: 1em;
+}
+.search-icon {
+	height: 40px;
+	width: 40px;
+	color: #282c34;
+}
+
+.panel {
+	width: 60vw;
+	height: 70vh;
+	position: fixed;
+	top: 10%;
+	left: 20%;
+	border-radius: 20px;
+	box-shadow: 0 0 5px black;
+	/*overflow-y: scroll;*/
+}
+
+.panel-option {
+	padding-left: 20px;
+	padding-top: 15px;
+	color: gray;
+
+}
+.panel-content {
+	
+}
+.window-circle {
+	padding: 3px;
+	cursor: default;
+}
+
+.hourlyforecast {
+	color: white;
+	font-size: 1.5em;
+	/*background-color: #282c34;*/
+	text-align: center;
+	justify-content: space-around;
+	padding-bottom: 10px;
+	padding-top: 5px;
+	border-bottom: 1px solid #343434;
+	vertical-align: middle;
+}
+
+.weeklyforecast {
+	flex-direction: row;
+	flex-wrap: wrap;
+	color: white;
+	font-size: 1.5em;
+	overflow: hidden;
+
+}
+.weeklyforecastdisplay {
+	justify-content: space-between;
+	padding: 15px;
+	border: 1px solid #343434;
+	flex-grow: 2;
+	/*width: 20%;*/
+}
+.weeklyforecastdisplay div {
+	padding: 10px;
+}
+.scroll {
+	overflow-y: scroll;
+}
