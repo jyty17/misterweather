@@ -45,7 +45,6 @@ class Home extends React.Component {
 	}
 
 	saveFavorites = () => {
-		// const { address, x, y, gridid } = this.state;
 		const { address, forecast, forecasthourly, favorites, relativelocation } = this.state;
 		const ls = localStorage.getItem('MisterWeather');
 		let lsjson = JSON.parse(ls);
@@ -72,7 +71,6 @@ class Home extends React.Component {
 
 	getFavorites = () => {
 		const ls = localStorage.getItem('MisterWeather');
-		// console.log("get", ls);
 		if (ls) {
 			this.setState({
 				favorites: Object.keys(JSON.parse(ls))
@@ -104,14 +102,12 @@ class Home extends React.Component {
 		this.setState({
 			activetab: 1
 		})
-		// console.log("1")
 	}
 
 	selectWeek = e => {
 		this.setState({
 			activetab: 2
 		})
-		// console.log("2")
 	}
 
 	// gets and updates hourly weather data
@@ -122,7 +118,6 @@ class Home extends React.Component {
 			.then( response => response.json() )
 			.then(
 				(result) => {
-					// console.log("response result", result);
 					const dat = result.properties.periods;
 					if (!dat) {
 						this.setState({
@@ -141,7 +136,6 @@ class Home extends React.Component {
 					console.log(error)
 					this.setState({
 						isloaded: false,
-						// error
 					})
 			})
 	}
@@ -154,7 +148,6 @@ class Home extends React.Component {
 			.then(
 				(result) => {
 					const dat = result.properties.periods;
-					// console.log(dat.length, dat)
 					if (!dat) {
 						this.setState({
 							error: dat.detail
@@ -188,7 +181,6 @@ class Home extends React.Component {
 					.then( response => response.json())
 					.then( (result) => {
 						const res = result.properties;
-						// console.log(res.forecast, res.forecastHourly)
 						return [res.forecast, res.forecastHourly]
 					})
 					.catch( error => console.log(error))
@@ -206,17 +198,12 @@ class Home extends React.Component {
 		const location = addr.replaceAll(' ', '+');
 
 		const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${location}&key=${api_key}`;
-		// console.log(location, url)
-		// const [x, y, gridid] = await this.updateStationPoints(url);
 
 		const [forecast, forecasthourly] = await this.updateStationPoints(url);
 
-		// this.updateHourly(x, y, gridid);
-		// this.updateWeekly(x, y, gridid);
 		this.updateHourly(forecasthourly);
 		this.updateWeekly(forecast);
 		this.setState({
-			// relativelocation: addr,
 			forecasthourly,
 			forecast,
 		});
